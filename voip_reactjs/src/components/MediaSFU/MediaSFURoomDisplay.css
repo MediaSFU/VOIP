@@ -1,0 +1,1026 @@
+.mediasfu-room-display {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.room-header {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 15px;
+}
+
+.room-title {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.room-name {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 10px;
+  font-family: 'Courier New', monospace;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.connection-status {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.connection-status.connected {
+  background: rgba(40, 167, 69, 0.2);
+  border: 1px solid #28a745;
+}
+
+.connection-status.disconnected {
+  background: rgba(220, 53, 69, 0.2);
+  border: 1px solid #dc3545;
+}
+
+.outgoing-call-setup-info {
+  background: rgba(255, 193, 7, 0.15);
+  border: 1px solid rgba(255, 193, 7, 0.4);
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Disconnected room state styling */
+.outgoing-call-setup-info.disconnected {
+  background: rgba(220, 53, 69, 0.15);
+  border: 1px solid rgba(220, 53, 69, 0.4);
+}
+
+.setup-message {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #fff3cd;
+}
+
+/* Disconnected message styling */
+.outgoing-call-setup-info.disconnected .setup-message {
+  color: #f8d7da;
+}
+
+.outgoing-call-setup-info.disconnected .setup-instructions {
+  color: #f8d7da;
+}
+
+.setup-instructions {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  color: #fff3cd;
+}
+
+.room-controls {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.primary-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.secondary-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.audio-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.status-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.control-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  min-width: 80px;
+  height: auto;
+  padding: 10px 12px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 1rem;
+}
+
+.control-btn svg {
+  font-size: 1.2rem;
+}
+
+.control-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1;
+  text-align: center;
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.expand-hint {
+  font-size: 0.6rem;
+  opacity: 0.7;
+  margin-top: 2px;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.control-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.control-btn:disabled .control-label {
+  opacity: 0.7;
+}
+
+.control-btn.active {
+  background: rgba(40, 167, 69, 0.3);
+  border-color: #28a745;
+}
+
+.control-btn.muted {
+  background: rgba(220, 53, 69, 0.3);
+  border-color: #dc3545;
+}
+
+.control-btn.end-btn:hover:not(:disabled) {
+  background: rgba(220, 53, 69, 0.3);
+  border-color: #dc3545;
+}
+
+.control-btn.leave-room-btn {
+  background: rgba(108, 117, 125, 0.2);
+  border-color: #6c757d;
+}
+
+.control-btn.leave-room-btn:hover:not(:disabled) {
+  background: rgba(108, 117, 125, 0.3);
+  border-color: #6c757d;
+}
+
+.control-btn.close-room-btn {
+  background: rgba(220, 53, 69, 0.2);
+  border-color: #dc3545;
+}
+
+.control-btn.close-room-btn:hover:not(:disabled) {
+  background: rgba(220, 53, 69, 0.3);
+  border-color: #dc3545;
+}
+
+.control-btn.hold-btn.active {
+  background: rgba(255, 193, 7, 0.3);
+  border-color: #ffc107;
+}
+
+.control-btn.transfer-btn:hover:not(:disabled) {
+  background: rgba(0, 123, 255, 0.3);
+  border-color: #007bff;
+}
+
+.control-btn.advanced-btn:hover:not(:disabled) {
+  background: rgba(102, 16, 242, 0.3);
+  border-color: #6610f2;
+}
+
+.control-btn.agent-btn:hover:not(:disabled) {
+  background: rgba(32, 201, 151, 0.3);
+  border-color: #20c997;
+}
+
+.control-btn.human-btn:hover:not(:disabled) {
+  background: rgba(255, 193, 7, 0.3);
+  border-color: #ffc107;
+}
+
+.control-btn.start-agent-btn:hover:not(:disabled) {
+  background: rgba(40, 167, 69, 0.3);
+  border-color: #28a745;
+}
+
+.control-btn.stop-agent-btn:hover:not(:disabled) {
+  background: rgba(220, 53, 69, 0.3);
+  border-color: #dc3545;
+}
+
+.control-btn.audio-scope-btn:hover:not(:disabled) {
+  background: rgba(102, 126, 234, 0.3);
+  border-color: #667eea;
+}
+
+.control-btn.audio-scope-btn.active {
+  background: rgba(76, 175, 80, 0.4);
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.control-btn.take-control-btn:hover:not(:disabled) {
+  background: rgba(255, 165, 0, 0.3);
+  border-color: #FFA500;
+}
+
+.control-btn.take-control-btn.has-control {
+  background: rgba(40, 167, 69, 0.2);
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.control-btn.take-control-btn.has-control:hover {
+  background: rgba(40, 167, 69, 0.3);
+  border-color: #28a745;
+  color: #28a745;
+  cursor: default;
+  transform: none;
+}
+
+.control-btn.smart-switch-btn:hover:not(:disabled) {
+  background: rgba(32, 201, 151, 0.3);
+  border-color: #20c997;
+}
+
+.control-btn.audio-scope-btn.inactive {
+  background: rgba(255, 193, 7, 0.3);
+  border: 2px solid #ffc107;
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.control-btn.audio-scope-btn.loading {
+  background: rgba(108, 117, 125, 0.3);
+  border: 2px solid #6c757d;
+  color: #6c757d;
+  font-weight: 600;
+  cursor: not-allowed;
+}
+
+.control-btn.audio-scope-btn .control-state {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+.control-btn.audio-scope-btn.active .control-state {
+  color: #4CAF50;
+}
+
+.control-btn.audio-scope-btn.inactive .control-state {
+  color: #ffc107;
+}
+
+.control-btn.audio-scope-btn.loading .control-state {
+  color: #6c757d;
+}
+
+/* Agent status indication in participants */
+.participants-row.has-agent {
+  border: 1px solid rgba(76, 175, 80, 0.5);
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.participants-row.has-agent .participants-icon {
+  color: #4CAF50;
+}
+
+.participant-name.agent {
+  background: rgba(76, 175, 80, 0.2);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.participant-name.sip-participant {
+  background: rgba(102, 126, 234, 0.2);
+  border: 1px solid #667eea;
+  padding: 2px 6px;
+  border-radius: 12px;
+}
+
+.participant-name.agent.sip-participant {
+  background: rgba(32, 201, 151, 0.2);
+  border-color: #20c997;
+}
+
+.audio-status {
+  text-align: center;
+}
+
+.audio-status-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.audio-status-text.active {
+  color: #28a745;
+}
+
+.audio-status-text.inactive {
+  color: #6c757d;
+}
+
+.hold-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hold-indicator {
+  background: rgba(255, 193, 7, 0.2);
+  border: 1px solid #ffc107;
+  color: #ffc107;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.mic-btn.active {
+  animation: pulse-green 2s infinite;
+}
+
+.disconnect-btn:hover:not(:disabled) {
+  background: rgba(220, 53, 69, 0.3);
+  border-color: #dc3545;
+}
+
+.mic-status {
+  text-align: center;
+}
+
+.mic-indicator {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.audio-level-meter {
+  width: 100px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.audio-level-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745 0%, #ffc107 70%, #dc3545 100%);
+  transition: width 0.1s ease;
+  border-radius: 3px;
+}
+
+.room-info {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 0.9rem;
+}
+
+.participant-info,
+.participants-count,
+.room-status {
+  margin-bottom: 5px;
+}
+
+.participant-info:last-child,
+.participants-count:last-child,
+.room-status:last-child {
+  margin-bottom: 0;
+}
+
+/* Room Audio Section */
+.room-audio-section {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(42, 42, 42, 0.8);
+  border-radius: 8px;
+  border: 1px solid #444;
+}
+
+.room-audio-section h4 {
+  margin: 0 0 12px 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.audio-grid-container {
+  min-height: 60px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .mediasfu-room-display {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .room-title {
+    font-size: 1.2rem;
+  }
+
+  .audio-controls {
+    gap: 10px;
+  }
+
+  .control-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .room-info {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Dark theme compatibility */
+@media (prefers-color-scheme: dark) {
+  .mediasfu-room-display {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  }
+}
+
+/* Compact mode for smaller displays */
+.mediasfu-room-display.compact {
+  padding: 15px;
+}
+
+.mediasfu-room-display.compact .room-header {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.mediasfu-room-display.compact .room-title {
+  font-size: 1.2rem;
+}
+
+.mediasfu-room-display.compact .audio-controls {
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.mediasfu-room-display.compact .control-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+}
+
+.mediasfu-room-display.compact .room-info {
+  padding: 10px;
+  font-size: 0.85rem;
+}
+
+/* Minimal Audio Indicator */
+.minimal-audio-indicator,
+.room-audio-header {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  display: inline-flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.audio-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.audio-dots {
+  display: flex;
+  gap: 2px;
+}
+
+.audio-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  animation: audio-pulse 1.5s ease-in-out infinite;
+}
+
+.audio-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.audio-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes audio-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.header-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* On larger displays, align items in a single row */
+@media (min-width: 768px) {
+  .header-status-row {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 15px;
+  }
+}
+
+/* Participants display styling */
+.participants-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.participants-icon {
+  color: #ffffff;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.participants-count {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.participants-list {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.participant-name {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  color: #ffffff;
+  white-space: nowrap;
+  max-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.more-participants {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  color: #ffffff;
+  font-style: italic;
+}
+
+/* Responsive participants display */
+@media (max-width: 768px) {
+  .participants-row {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  
+  .participants-list {
+    justify-content: center;
+  }
+  
+  .participant-name {
+    max-width: 60px;
+  }
+
+  /* Mobile control button adjustments */
+  .control-btn {
+    min-width: 60px;
+    padding: 8px 6px;
+    gap: 2px;
+  }
+
+  .control-btn svg {
+    font-size: 1.1rem;
+  }
+
+  .control-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.3px;
+  }
+
+  /* Show expand hint on mobile */
+  .expand-hint {
+    display: inline !important;
+    font-size: 0.5rem !important;
+    opacity: 0.8 !important;
+    margin-left: 4px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-style: italic !important;
+  }
+
+  .primary-controls, .secondary-controls, .audio-controls {
+    gap: 10px;
+  }
+
+  .room-controls {
+    gap: 15px;
+  }
+
+  /* Mobile-specific Bot Audio control layout */
+  .control-btn.audio-scope-btn {
+    min-width: 120px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .control-btn.audio-scope-btn .control-label {
+    font-size: 0.55rem;
+    line-height: 1.0;
+    white-space: nowrap;
+  }
+
+  .control-btn.audio-scope-btn .control-state {
+    font-size: 0.55rem;
+    margin-top: 1px;
+    white-space: nowrap;
+  }
+
+  /* FORCE Advanced controls to be vertical on mobile with limited height */
+  .advanced-controls-content {
+    flex-direction: column !important;
+    gap: 15px !important;
+    max-height: 300px !important; /* Limit to roughly one card height */
+    overflow-y: auto !important;
+  }
+
+  .advanced-controls-content .controls-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    padding: 8px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .advanced-controls-content > * {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .advanced-controls-content .control-card {
+    flex: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-height: 200px !important; /* Consistent card height */
+  }
+
+  /* Add scroll indicator for mobile */
+  .advanced-controls-content::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .advanced-controls-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+  }
+
+  .advanced-controls-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+  }
+
+  .advanced-controls-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Header row layout fix for mobile */
+  .header-status-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .connection-status {
+    order: 1;
+  }
+
+  .participants-row {
+    order: 2;
+  }
+
+  .room-audio-header {
+    order: 3;
+  }
+}
+
+/* Compact recording toggle styling */
+.recording-toggle-inline {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.recording-toggle-compact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.recording-toggle-compact:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.recording-toggle-compact input[type="checkbox"] {
+  margin: 0;
+  width: 14px;
+  height: 14px;
+  accent-color: #4CAF50;
+}
+
+.recording-label-compact {
+  font-size: 0.75rem;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.recording-controls {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.recording-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.recording-toggle input[type="checkbox"] {
+  margin: 0;
+  accent-color: #667eea;
+}
+
+.recording-label {
+  user-select: none;
+}
+
+.recording-toggle:hover .recording-label {
+  color: #ffffff;
+}
+
+.hidden-audio-grid {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Advanced Controls Inline Section */
+.advanced-controls-section {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.advanced-controls-header {
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 8px;
+}
+
+.advanced-controls-header h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.warning-message {
+  font-size: 0.85rem;
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.advanced-controls-content {
+  /* Inline rendering styles - inherits from parent container */
+  position: relative;
+  min-height: 200px; /* Prevent content jumping */
+  transition: none; /* Remove transitions that might cause flashing */
+}
+
+/* Mobile swipe hint for vertical scrolling */
+.advanced-controls-content::after {
+  content: "↕ scroll for more";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  pointer-events: none;
+  white-space: nowrap;
+  /* Hide by default - can be shown by removing display: none */
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Show scroll hint on mobile when advanced controls are open */
+  .advanced-controls-content::after { 
+    display: block; 
+    bottom: -16px; /* Adjust position for mobile */
+  }
+}
+
+.advanced-controls-content .advanced-controls-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.advanced-controls-content .controls-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 0 16px 0;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  /* Limit visible width to show ~2.5 cards to encourage scrolling */
+  max-width: 100%;
+}
+
+/* Custom scrollbar for webkit browsers */
+.advanced-controls-content .controls-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.advanced-controls-content .controls-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.advanced-controls-content .controls-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.advanced-controls-content .controls-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.advanced-controls-content .control-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  overflow: visible; /* Allow content to expand */
+  flex: 0 0 260px; /* Smaller fixed width for better scrolling */
+  min-height: 200px; /* Minimum height for consistency */
+  max-width: 260px; /* Ensure cards don't expand */
+}
+
+.advanced-controls-content .control-card-header {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.advanced-controls-content .control-card-content {
+  padding: 16px;
+  max-height: none; /* Remove height restrictions */
+  overflow: visible;
+}
+
+/* Ensure proper text colors for inline rendering */
+.advanced-controls-content .input-label,
+.advanced-controls-content .modern-select,
+.advanced-controls-content .modern-input,
+.advanced-controls-content .modern-textarea {
+  color: #ffffff;
+}
+
+.advanced-controls-content .modern-select option {
+  background: #333;
+  color: #ffffff;
+}

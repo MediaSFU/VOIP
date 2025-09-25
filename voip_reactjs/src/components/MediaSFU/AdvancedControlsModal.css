@@ -1,0 +1,472 @@
+/* Advanced Controls Inline Component Styles */
+
+/* Main container with theme support */
+.advanced-controls-inline {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--border-color, #e1e5e9);
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--bg-color, #ffffff);
+  color: var(--text-color, #000000);
+}
+
+/* Light theme styles */
+.app.light .advanced-controls-inline {
+  background: #ffffff;
+  color: #000000;
+  border-color: #e1e5e9;
+}
+
+/* Dark theme styles */
+.app.dark .advanced-controls-inline {
+  background: var(--card-bg, #2d3748);
+  color: var(--text-color, #e2e8f0);
+  border-color: var(--border-color, #4a5568);
+}
+
+/* Container for advanced controls content */
+.advanced-controls-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Controls grid */
+.advanced-controls-inline .controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  align-items: start;
+  contain: layout;
+}
+
+@media (min-width: 768px) {
+  .advanced-controls-inline .controls-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .advanced-controls-inline .controls-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Control cards styling for both modal and inline */
+.advanced-controls-inline .control-card {
+  border: 2px solid var(--border-color, #d1d5db);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  will-change: transform, box-shadow;
+  contain: layout style;
+  background: var(--bg-color, #ffffff);
+}
+
+.advanced-controls-inline .control-card:hover {
+  border-color: var(--primary-color, #2563eb);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Light theme control cards */
+.app.light .advanced-controls-inline .control-card {
+  background: #ffffff;
+  border-color: #d1d5db;
+}
+
+/* Dark theme control cards */
+.app.dark .advanced-controls-inline .control-card {
+  background: var(--card-bg, #4a5568);
+  border-color: var(--border-color, #4a5568);
+}
+
+.app.dark .advanced-controls-inline .control-card:hover {
+  border-color: var(--primary-color, #63b3ed);
+  box-shadow: 0 8px 24px rgba(99, 179, 237, 0.2);
+}
+
+.control-card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.control-icon {
+  font-size: 1.2rem;
+}
+
+.control-card-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.control-card-content {
+  padding: 20px;
+}
+
+.advanced-controls-inline .input-group {
+  margin-bottom: 16px;
+}
+
+.advanced-controls-inline .input-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-color, #000000);
+}
+
+/* Light theme labels */
+.app.light .advanced-controls-inline .input-label {
+  color: #000000;
+}
+
+/* Dark theme labels */
+.app.dark .advanced-controls-inline .input-label {
+  color: var(--text-color, #e2e8f0);
+}
+
+/* Form inputs and selects */
+.advanced-controls-inline .modern-input,
+.advanced-controls-inline .modern-select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--border-color, #d1d5db);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  line-height: 1.4;
+  background: var(--input-bg, #ffffff);
+  color: var(--text-color, #000000);
+}
+
+/* Light theme form inputs */
+.app.light .advanced-controls-inline .modern-input,
+.app.light .advanced-controls-inline .modern-select {
+  background: #ffffff;
+  color: #000000;
+  border-color: #d1d5db;
+}
+
+/* Dark theme form inputs */
+.app.dark .advanced-controls-inline .modern-input,
+.app.dark .advanced-controls-inline .modern-select {
+  background: var(--input-bg, #2d3748);
+  color: var(--text-color, #e2e8f0);
+  border-color: var(--border-color, #4a5568);
+}
+
+/* Placeholder styles */
+.advanced-controls-inline .modern-input::placeholder {
+  color: var(--text-muted, #6b7280);
+  font-weight: 400;
+  opacity: 1;
+}
+
+.app.light .advanced-controls-inline .modern-input::placeholder {
+  color: #6b7280;
+}
+
+.app.dark .advanced-controls-inline .modern-input::placeholder {
+  color: var(--text-muted, #a0aec0);
+}
+
+/* Select dropdown options */
+.advanced-controls-inline .modern-select option {
+  padding: 8px 12px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Light theme select options */
+.app.light .advanced-controls-inline .modern-select option {
+  background: #ffffff;
+  color: #000000;
+}
+
+.app.light .advanced-controls-inline .modern-select option:checked,
+.app.light .advanced-controls-inline .modern-select option:hover,
+.app.light .advanced-controls-inline .modern-select option:focus {
+  background: #f3f4f6;
+  color: #000000;
+}
+
+/* Dark theme select options */
+.app.dark .advanced-controls-inline .modern-select option {
+  background: var(--input-bg, #2d3748);
+  color: var(--text-color, #e2e8f0);
+}
+
+.app.dark .advanced-controls-inline .modern-select option:checked,
+.app.dark .advanced-controls-inline .modern-select option:hover,
+.app.dark .advanced-controls-inline .modern-select option:focus {
+  background: var(--border-color, #4a5568);
+  color: var(--text-color, #e2e8f0);
+}
+
+/* Focus states */
+.advanced-controls-inline .modern-input:focus,
+.advanced-controls-inline .modern-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Light theme focus states */
+.app.light .advanced-controls-inline .modern-input:focus,
+.app.light .advanced-controls-inline .modern-select:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Dark theme focus states */
+.app.dark .advanced-controls-inline .modern-input:focus,
+.app.dark .advanced-controls-inline .modern-select:focus {
+  border-color: var(--primary-color, #63b3ed);
+  background: var(--input-bg, #2d3748);
+  color: var(--text-color, #e2e8f0);
+  box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.15);
+}
+
+/* Disabled states */
+.advanced-controls-inline .modern-input:disabled,
+.advanced-controls-inline .modern-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.app.light .advanced-controls-inline .modern-input:disabled,
+.app.light .advanced-controls-inline .modern-select:disabled {
+  background: #f9fafb;
+  color: #6b7280;
+  border-color: #e5e7eb;
+}
+
+.app.dark .advanced-controls-inline .modern-input:disabled,
+.app.dark .advanced-controls-inline .modern-select:disabled {
+  background: #374151;
+  color: #9ca3af;
+  border-color: #6b7280;
+}
+
+.advanced-controls-inline .checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.advanced-controls-inline .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-color, #000000);
+}
+
+/* Light theme checkbox labels */
+.app.light .advanced-controls-inline .checkbox-label {
+  color: #000000;
+}
+
+/* Dark theme checkbox labels */
+.app.dark .advanced-controls-inline .checkbox-label {
+  color: var(--text-color, #e2e8f0);
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color, #2563eb);
+  cursor: pointer;
+}
+
+.app.dark .checkbox-label input[type="checkbox"] {
+  accent-color: var(--primary-color, #63b3ed);
+}
+
+.checkbox-label input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.checkbox-label span {
+  font-weight: 500;
+  user-select: none;
+  color: inherit;
+}
+
+.control-action-btn {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+  background: linear-gradient(135deg, #218838, #17a2b8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.25);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0069d9, #004085);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.btn-info {
+  background: linear-gradient(135deg, #17a2b8, #117a8b);
+  color: white;
+}
+
+.btn-info:hover:not(:disabled) {
+  background: linear-gradient(135deg, #138496, #0c5460);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(23, 162, 184, 0.2);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+  color: #212529;
+}
+
+.btn-warning:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e0a800, #c69500);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.2);
+}
+
+.control-action-btn:disabled {
+  background: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.agent-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.agent-status {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-indicator {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-indicator.active {
+  color: #155724;
+}
+
+.advanced-controls-inline .control-description {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-muted, #666666);
+}
+
+/* Light theme control descriptions */
+.app.light .advanced-controls-inline .control-description {
+  color: #666666;
+}
+
+/* Dark theme control descriptions */
+.app.dark .advanced-controls-inline .control-description {
+  color: var(--text-muted, #a0aec0);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .advanced-controls-inline {
+    padding: 16px;
+  }
+  
+  .advanced-controls-inline .controls-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .control-card-header {
+    padding: 14px 16px;
+    font-size: 1rem;
+  }
+  
+  .control-card-content {
+    padding: 16px;
+  }
+  
+  .control-action-btn {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Ensure all advanced control items flow vertically */
+  .advanced-controls-section {
+    width: 100%;
+  }
+
+  .advanced-controls-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
+  /* Make individual control cards full width */
+  .advanced-controls-content > * {
+    width: 100% !important;
+    max-width: none !important;
+    flex: none !important;
+  }
+}

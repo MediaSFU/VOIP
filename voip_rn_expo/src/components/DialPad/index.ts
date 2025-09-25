@@ -1,0 +1,1 @@
+export { DialPad } from './DialPad';

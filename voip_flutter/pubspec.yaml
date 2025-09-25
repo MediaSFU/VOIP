@@ -1,0 +1,80 @@
+name: voip_flutter
+description: "A comprehensive VOIP application built with Flutter and MediaSFU SDK, designed to provide professional voice communication capabilities."
+
+# Prevent accidental publishing
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI and Icons
+  cupertino_icons: ^1.0.6
+  font_awesome_flutter: ^10.10.0
+  google_fonts: ^6.2.1
+  
+  # State Management
+  provider: ^6.1.1
+  
+  # Storage and Preferences
+  shared_preferences: ^2.3.3
+  
+  # Networking
+  http: ^1.2.2
+  socket_io_client: ^3.0.2
+  
+  # MediaSFU SDK
+  mediasfu_sdk: ^2.2.0
+  
+  # Utilities
+  collection: ^1.18.0
+  intl: ^0.20.1
+  uuid: ^4.5.1
+  
+  # Phone number validation
+  dlibphonenumber: ^1.1.47
+  
+  # UI Components
+  flutter_spinkit: ^5.2.1
+  
+  # File handling for import/export
+  file_picker: ^10.3.3
+  path_provider: ^2.1.4
+  flutter_webrtc: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.13.1
+  msix: ^3.16.12
+
+flutter:
+  uses-material-design: true
+  
+  # Assets
+  assets:
+    - assets/
+
+flutter_launcher_icons:
+  image_path: "logo512.png"
+  android: true
+  ios: false
+  web:
+    generate: false
+  windows:
+    generate: true
+    image_path: "logo512.png"
+    icon_size: 48
+
+msix_config:
+  display_name: MediaSFU
+  publisher_display_name: MediaSFU
+  identity_name: com.mediasfu.voipflutter
+  msix_version: 1.0.0.0
+  logo_path: assets/icon/app_icon.png

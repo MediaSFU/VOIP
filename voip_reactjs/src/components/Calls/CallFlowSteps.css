@@ -1,0 +1,460 @@
+/* Step-by-step call flow styles with theme support */
+
+.step-content {
+  background: var(--card-bg, #f8f9fa);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 4px var(--shadow-color, rgba(0,0,0,0.1));
+}
+
+.step-content h4 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-color, #333);
+  font-size: 1.25rem;
+}
+
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color, #e0e0e0);
+}
+
+.mode-options {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.mode-option {
+  border: 2px solid var(--border-color, #e0e0e0);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: var(--card-bg, #fff);
+  position: relative; /* Add this for absolute positioning of selection indicator */
+}
+
+.mode-option:hover {
+  border-color: var(--primary-color, #007bff);
+  background: var(--hover-bg, #f8f9fa);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-color, rgba(0,0,0,0.15));
+}
+
+.mode-option.bot-mode {
+  border-color: var(--info-color, #17a2b8);
+}
+
+.mode-option.user-mode {
+  border-color: var(--success-color, #28a745);
+}
+
+.mode-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.mode-header h5 {
+  margin: 0;
+  color: var(--text-color, #333);
+  font-size: 1.1rem;
+}
+
+.mode-description {
+  font-size: 0.875rem;
+  color: var(--text-muted, #666);
+  margin-top: 0.5rem;
+}
+
+.mode-details {
+  font-size: 0.875rem;
+  color: var(--text-muted, #666);
+}
+
+.mode-details p {
+  margin: 0.25rem 0;
+}
+
+/* Enhanced mode option states */
+.mode-option.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--disabled-bg, #f5f5f5);
+  border-color: var(--disabled-border, #ccc);
+}
+
+.mode-option.disabled:hover {
+  border-color: var(--disabled-border, #ccc);
+  background: var(--disabled-bg, #f5f5f5);
+  transform: none;
+  box-shadow: none;
+}
+
+.mode-option.auto-selected {
+  border-color: var(--success-color, #28a745);
+  background: var(--success-bg, #f8fff8);
+  box-shadow: 0 0 0 2px var(--success-focus-shadow, rgba(40, 167, 69, 0.25));
+}
+
+/* Selection indicator in top-right corner */
+.mode-option.auto-selected::after {
+  content: "✓";
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--success-color, #28a745);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.mode-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auto-selected-badge {
+  background: var(--success-color, #28a745);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.unavailable-badge {
+  background: var(--danger-color, #dc3545);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* Quick call button in room header */
+.quick-call-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.quick-call-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  white-space: nowrap;
+  min-width: 200px;
+}
+
+.quick-call-status {
+  font-size: 0.875rem;
+  color: var(--text-muted, #666);
+  font-weight: 500;
+}
+
+.call-room-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--card-bg, #f8f9fa);
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #e0e0e0);
+}
+
+.call-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.call-status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  background: var(--info-color, #17a2b8);
+  color: white;
+}
+
+.call-number {
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-color, #333);
+}
+
+.requirement-warning {
+  color: var(--danger-color, #dc3545) !important;
+  font-weight: bold;
+}
+
+.connecting-status,
+.success-status {
+  text-align: center;
+  padding: 2rem;
+}
+
+.connecting-status p,
+.success-status p {
+  margin: 0.5rem 0;
+  color: var(--text-muted, #666);
+}
+
+.validation-message {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  border: 1px solid;
+}
+
+.validation-message.error {
+  background: var(--danger-bg, #f8d7da);
+  color: var(--danger-text, #721c24);
+  border-color: var(--danger-border, #f5c6cb);
+}
+
+/* Form inputs */
+.from-number-select,
+.phone-number-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 6px;
+  background: var(--input-bg, #fff);
+  color: var(--text-color, #333);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.from-number-select:focus,
+.phone-number-input:focus {
+  outline: none;
+  border-color: var(--primary-color, #007bff);
+  box-shadow: 0 0 0 3px var(--primary-focus-shadow, rgba(0,123,255,0.25));
+}
+
+.phone-number-section,
+.from-number-section {
+  margin-bottom: 1rem;
+}
+
+.phone-number-section label,
+.from-number-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color, #333);
+}
+
+/* Step flow dialpad styles */
+.step-content .dialpad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  max-width: 200px;
+  margin: 1rem auto 0;
+}
+
+.step-content .dialpad-btn {
+  padding: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border: 2px solid var(--border-color, #ddd);
+  border-radius: 8px;
+  background: var(--card-bg, #fff);
+  color: var(--text-color, #333);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-content .dialpad-btn:hover:not(:disabled) {
+  border-color: var(--primary-color, #007bff);
+  background: var(--hover-bg, #f8f9fa);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-color, rgba(0,0,0,0.15));
+}
+
+.step-content .dialpad-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px var(--shadow-color, rgba(0,0,0,0.1));
+}
+
+.step-content .dialpad-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.step-content .dialpad-plus {
+  background: var(--info-color, #17a2b8);
+  color: white;
+  border-color: var(--info-color, #17a2b8);
+}
+
+.step-content .dialpad-plus:hover:not(:disabled) {
+  background: var(--info-color, #138496);
+  border-color: var(--info-color, #138496);
+}
+
+.step-content .input-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.step-content .dialpad-toggle {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* Dark theme support */
+[data-theme="dark"] {
+  --step-bg: #374151;
+  --step-text: #9ca3af;
+  --step-connector: #374151;
+  --card-bg: #1f2937;
+  --border-color: #374151;
+  --text-color: #f9fafb;
+  --text-muted: #9ca3af;
+  --shadow-color: rgba(0,0,0,0.3);
+  --hover-bg: #374151;
+  --input-bg: #374151;
+  --danger-bg: #7f1d1d;
+  --danger-text: #fca5a5;
+  --danger-border: #991b1b;
+  --primary-focus-shadow: rgba(59,130,246,0.25);
+  --disabled-bg: #374151;
+  --disabled-border: #4b5563;
+  --success-bg: #064e3b;
+  --success-focus-shadow: rgba(34, 197, 94, 0.25);
+}
+
+/* Light theme support */
+[data-theme="light"] {
+  --step-bg: #e5e7eb;
+  --step-text: #6b7280;
+  --step-connector: #e5e7eb;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --text-color: #111827;
+  --text-muted: #6b7280;
+  --shadow-color: rgba(0,0,0,0.1);
+  --hover-bg: #f9fafb;
+  --input-bg: #ffffff;
+  --danger-bg: #fef2f2;
+  --danger-text: #991b1b;
+  --danger-border: #fecaca;
+  --primary-focus-shadow: rgba(59,130,246,0.25);
+  --disabled-bg: #f9fafb;
+  --disabled-border: #d1d5db;
+  --success-bg: #f0fdf4;
+  --success-focus-shadow: rgba(34, 197, 94, 0.25);
+}
+
+/* Auto detect system theme if no explicit theme set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --step-bg: #374151;
+    --step-text: #9ca3af;
+    --step-connector: #374151;
+    --card-bg: #1f2937;
+    --border-color: #374151;
+    --text-color: #f9fafb;
+    --text-muted: #9ca3af;
+    --shadow-color: rgba(0,0,0,0.3);
+    --hover-bg: #374151;
+    --input-bg: #374151;
+    --danger-bg: #7f1d1d;
+    --danger-text: #fca5a5;
+    --danger-border: #991b1b;
+    --primary-focus-shadow: rgba(59,130,246,0.25);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --step-bg: #e5e7eb;
+    --step-text: #6b7280;
+    --step-connector: #e5e7eb;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+    --text-color: #111827;
+    --text-muted: #6b7280;
+    --shadow-color: rgba(0,0,0,0.1);
+    --hover-bg: #f9fafb;
+    --input-bg: #ffffff;
+    --danger-bg: #fef2f2;
+    --danger-text: #991b1b;
+    --danger-border: #fecaca;
+    --primary-focus-shadow: rgba(59,130,246,0.25);
+  }
+}
+
+/* Hide other components during step flow */
+.dialer-section.step-flow-active .room-connection-section,
+.dialer-section.step-flow-active .phone-display,
+.dialer-section.step-flow-active > .dialer-content > .dialpad,
+.dialer-section.step-flow-active .call-actions,
+.dialer-section.step-flow-active .eligibility-info {
+  display: none !important;
+}
+
+/* Allow step content dialpad to show */
+.dialer-section.step-flow-active .step-content .dialpad {
+  display: grid !important;
+}
+
+/* Only show step flow content when active */
+.dialer-section.step-flow-active .step-content {
+  display: block !important;
+}
+
+/* Responsive design - only apply on small screens */
+@media (max-width: 767px) {
+  .step-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .step-content {
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Force step content to be responsive on desktop and tablet */
+@media (min-width: 768px) {
+  .step-content {
+    max-width: 600px;
+    margin: 1rem auto;
+  }
+}

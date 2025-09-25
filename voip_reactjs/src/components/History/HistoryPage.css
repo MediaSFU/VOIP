@@ -1,0 +1,300 @@
+.history-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.history-header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.history-header h2 {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.history-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.stat-label {
+  font-weight: 500;
+  color: #666;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: #333;
+}
+
+.history-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+}
+
+.history-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.select-all-btn {
+  background: #007bff;
+  color: white;
+}
+
+.select-all-btn:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.clear-selected-btn {
+  background: #ffc107;
+  color: #212529;
+}
+
+.clear-selected-btn:hover:not(:disabled) {
+  background: #e0a800;
+}
+
+.clear-all-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.clear-all-btn:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.no-history {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-style: italic;
+}
+
+.history-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.2s;
+}
+
+.history-item:hover {
+  border-color: #007bff;
+  box-shadow: 0 2px 4px rgba(0,123,255,0.1);
+}
+
+.history-item.selected {
+  border-color: #007bff;
+  background: #f8f9ff;
+}
+
+.history-item-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  gap: 12px;
+}
+
+.call-checkbox {
+  margin: 0;
+}
+
+.call-basic-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.call-participants {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.call-direction {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.call-number {
+  font-weight: 500;
+  color: #333;
+}
+
+.call-metadata {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.call-status {
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.05);
+}
+
+.expand-hint {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-style: italic;
+  opacity: 0.8;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.call-time {
+  color: #666;
+}
+
+.call-duration {
+  color: #666;
+  font-family: monospace;
+}
+
+.expand-icon {
+  color: #666;
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+
+.history-item-details {
+  padding: 0 16px 16px 16px;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 500;
+  color: #666;
+  min-width: 150px;
+}
+
+.detail-value {
+  color: #333;
+  text-align: right;
+  word-break: break-all;
+}
+
+.call-actions {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.delete-call-btn {
+  padding: 6px 12px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.delete-call-btn:hover {
+  background: #c82333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .history-page {
+    padding: 15px;
+  }
+
+  .call-basic-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .call-metadata {
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .history-stats {
+    justify-content: center;
+  }
+
+  .history-filters,
+  .history-actions {
+    justify-content: center;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .detail-value {
+    text-align: left;
+  }
+}

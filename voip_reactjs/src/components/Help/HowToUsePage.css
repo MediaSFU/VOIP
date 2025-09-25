@@ -1,0 +1,354 @@
+/* How to Use Page Styling - Matching App Theme */
+.how-to-use-page {
+  min-height: calc(100vh - 200px);
+  background: var(--bg-color, #f7fafc);
+  padding: 2rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.how-to-use-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--bg-color, #ffffff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Page Header */
+.page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Guide Content */
+.guide-content {
+  padding: 2rem;
+  background: var(--bg-color, #ffffff);
+  color: var(--text-color, #333333);
+}
+
+.guide-section {
+  margin-bottom: 3rem;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 1rem;
+}
+
+.section-header h2 {
+  color: var(--text-color, #2d3748);
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Step Cards */
+.step-card {
+  background: var(--card-bg, #f8f9fa);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color, #007bff);
+}
+
+.step-card h3 {
+  color: var(--text-color, #2d3748);
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.step-card h4 {
+  color: var(--text-color, #4a5568);
+  font-size: 1.1rem;
+  margin: 1rem 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.step-card p {
+  color: var(--text-muted, #666666);
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.step-card ul, .step-card ol {
+  color: var(--text-muted, #666666);
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.step-card li {
+  margin-bottom: 0.5rem;
+}
+
+.step-card ul ul {
+  margin: 0.5rem 0;
+}
+
+/* Method Options */
+.method-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.method-card {
+  background: var(--input-bg, #ffffff);
+  border: 2px solid var(--border-color, #e0e0e0);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.method-card:hover {
+  border-color: var(--primary-color, #007bff);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.method-card h4 {
+  color: var(--text-color, #2d3748);
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.method-card p {
+  color: var(--text-muted, #666666);
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.method-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.method-card li {
+  color: var(--text-muted, #666666);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Tips Grid */
+.tip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tip-card {
+  background: var(--card-bg, #f8f9fa);
+  border: 1px solid var(--info-color, #17a2b8);
+  border-radius: 10px;
+  padding: 1.2rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(23, 162, 184, 0.2);
+}
+
+.tip-card h4 {
+  color: var(--info-color, #17a2b8);
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.tip-card p {
+  color: var(--text-muted, #666666);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Troubleshooting */
+.troubleshoot-item {
+  background: var(--card-bg, #f8f9fa);
+  border: 1px solid var(--warning-color, #ffc107);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+.troubleshoot-item:hover {
+  border-color: var(--danger-color, #dc3545);
+}
+
+.troubleshoot-item h4 {
+  color: var(--warning-color, #ffc107);
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.troubleshoot-item p {
+  color: var(--text-muted, #666666);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Support Links */
+.support-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.support-link {
+  display: block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.support-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+/* Strong text styling */
+strong {
+  color: var(--text-color, #2d3748);
+  font-weight: 600;
+}
+
+/* Special Note Styling */
+.special-note {
+  background: var(--card-bg, #f8f9fa);
+  border: 2px solid var(--warning-color, #ffc107);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.special-note::before {
+  content: "⚠️";
+  position: absolute;
+  top: -10px;
+  left: 1rem;
+  background: var(--bg-color, #ffffff);
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.special-note p {
+  margin: 0;
+  color: var(--text-color, #333333);
+  font-weight: 500;
+}
+
+.special-note strong {
+  color: var(--warning-color, #ffc107);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .how-to-use-page {
+    padding: 1rem 0.5rem;
+  }
+  
+  .page-header {
+    padding: 2rem 1rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1rem;
+  }
+  
+  .guide-content {
+    padding: 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .step-card {
+    padding: 1rem;
+  }
+  
+  .method-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .tip-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .support-links {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-to-use-container {
+    border-radius: 8px;
+    margin: 0;
+    border: none;
+  }
+  
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .step-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+}

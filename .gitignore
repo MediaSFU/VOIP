@@ -1,0 +1,227 @@
+# ==================================================
+# Multi-Platform VOIP Project .gitignore
+# Flutter, React.js, React Native, React Native Expo
+# ==================================================
+
+# ==================================================
+# General OS & Editor Files
+# ==================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.sublime-*
+*.code-workspace
+
+# ==================================================
+# Node.js & JavaScript (React.js, React Native, Expo)
+# ==================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Package managers
+package-lock.json
+yarn.lock
+
+# Build outputs
+build/
+dist/
+out/
+
+# Environment & Config Files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ==================================================
+# Flutter
+# ==================================================
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Windows build artifacts
+/windows/flutter/
+/windows/runner/Release/
+/windows/runner/Debug/
+/windows/runner/x64/
+/windows/runner/Generated.props
+/windows/runner/CMakeCache.txt
+/windows/runner/CMakeFiles/
+/windows/CMakeCache.txt
+/windows/CMakeFiles/
+/windows/build/
+
+# MSIX packaging
+/windows/packaging/
+/build/installer/
+
+# ==================================================
+# React Native Specific
+# ==================================================
+# Metro bundler
+.metro-health-check*
+
+# Android build outputs
+**/android/.gradle/
+**/android/app/build/
+**/android/build/
+**/android/gradle/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/keystore.properties
+**/android/.cxx/
+**/android/app/.cxx/
+
+# iOS build outputs
+**/ios/build/
+**/ios/DerivedData/
+**/ios/Pods/
+**/ios/Podfile.lock
+**/ios/*.xcworkspace/xcuserdata/
+**/ios/*.xcodeproj/xcuserdata/
+**/ios/*.xcodeproj/project.xcworkspace/xcuserdata/
+
+# React Native debugging
+flipper-dump
+.flipper
+
+# ==================================================
+# Expo Specific
+# ==================================================
+.expo/
+.expo-shared/
+web-build/
+
+# ==================================================
+# React.js Build Outputs
+# ==================================================
+voip_reactjs/build/
+voip_reactjs/dist/
+
+# ==================================================
+# Common Build & Temp Files
+# ==================================================
+*.log
+*.tmp
+*.temp
+.cache/
+coverage/
+.nyc_output/
+
+# Backup files
+*.bak
+*.backup
+
+# ==================================================
+# APK & Distribution Files
+# ==================================================
+*.apk
+*.aab
+*.ipa
+*.exe
+*.msi
+*.dmg
+
+# ==================================================
+# Project Specific Exclusions
+# ==================================================
+# Keep important config files but exclude sensitive ones
+!**/android/app/src/main/res/
+!**/android/app/src/main/AndroidManifest.xml
+!**/pubspec.yaml
+!**/package.json
+
+# Exclude generated/copied files
+voip_rn/android/link-assets-manifest.json
+voip_rn/.bundle/
+
+# Test & Debug files
+__tests__/coverage/
+**/clean/_logs/
+
+# ==================================================
+# Platform-Specific Artifacts
+# ==================================================
+# Flutter web
+web/
+
+# macOS
+**/macos/build/
+**/macos/Flutter/
+**/macos/*.xcworkspace/xcuserdata/
+
+# Linux
+**/linux/build/
+
+# Windows additional
+*.pdb
+*.ilk
+*.tlog
+*.lastbuildstate
+
+# ==================================================
+# End of .gitignore
+# ==================================================
