@@ -13,7 +13,6 @@ Reference implementation of the MediaSFU web dialer using React.js and TypeScrip
 - [Project structure](#project-structure)
 - [Getting started](#getting-started)
 - [Configuration](#configuration)
-- [Phone validation](#phone-validation)
 - [MediaSFU workflow](#mediasfu-workflow)
 - [Development tasks](#development-tasks)
 - [Build and deploy](#build-and-deploy)
@@ -24,16 +23,16 @@ Reference implementation of the MediaSFU web dialer using React.js and TypeScrip
 
 The web client is grounded in functional React components and hooks. Core responsibilities include:
 
-- Rendering a configurable dialer UI with libphonenumber-js formatting helpers.
+- Rendering a configurable dialer UI.
 - Managing MediaSFU REST calls through `callService.ts`.
 - Displaying active call state and an in-memory call history.
 - Persisting operator preferences (API credentials, refresh cadence) to local storage.
 
-All data flows are centered around `CallsPage.tsx`, which composes the dialpad, active call list, upcoming call queue, and call history. Supporting hooks (`useCallManager`, `useVoipConfig`, `useLiveUpdates`) coordinate polling, validation, and state persistence.
+All data flows are centered around `CallsPage.tsx`, which composes the dialpad, active call list, upcoming call queue, and call history. Supporting hooks (`useCallManager`, `useVoipConfig`, `useLiveUpdates`) coordinate polling and state persistence.
 
 ## Key features
 
-- **Dialer with validation** – Real-time E.164 formatting, validation feedback, and quick-dial buttons.
+- **Dialer** – Ergonomic number entry with quick-dial buttons.
 - **MediaSFU call orchestration** – Creates outbound calls, monitors status, and provides manual hang-up controls.
 - **Active call dashboard** – Visualizes ringing, connected, and completed calls with minimal polling.
 - **Call history list** – Stores up to 50 historical items locally with filtering by direction.
@@ -114,17 +113,10 @@ Use the **Test Connection** action in the UI to verify credentials before placin
 Environment variables can pre-seed defaults:
 
 ```env
-REACT_APP_API_BASE_URL=https://telephony.mediasfu.com
+REACT_APP_API_BASE_URL=https://mediasfu.com/telephony
 REACT_APP_MEDIASFU_API_KEY=
 REACT_APP_DEFAULT_USERNAME=
 ```
-
-## Phone validation
-
-- Implemented via `libphonenumber-js`.
-- Accepts E.164, national, and formatted inputs; normalizes to E.164 before API submission.
-- The dialpad honours the configured default country (derived from browser locale or manual selection).
-- Validation errors prevent calls from being submitted and surface contextual messages next to the input.
 
 ## MediaSFU workflow
 
@@ -163,7 +155,7 @@ Production checklist:
 | Issue | Likely cause | Resolution |
 | --- | --- | --- |
 | “API test failed” | Invalid credentials or unreachable endpoint | Re-enter the API key, confirm base URL, inspect browser console |
-| Calls stay in “dialing” | MediaSFU tenant not configured for outbound calls | Confirm the tenant status on <https://telephony.mediasfu.com> |
+| Calls stay in “dialing” | MediaSFU tenant not configured for outbound calls | Confirm the tenant status on <https://mediasfu.com/telephony> |
 | Polling stops updating | Update interval disabled or network error | Re-enable live updates, check console for fetch errors |
 | Validation blocks dialing | Input not E.164 valid | Adjust country code or number format |
 
@@ -183,7 +175,7 @@ localStorage.setItem('voip_debug', 'true');
 ## Support
 
 - MediaSFU platform docs: <https://mediasfu.com/docs>
-- Telephony portal: <https://telephony.mediasfu.com>
+- Telephony portal: <https://mediasfu.com/telephony>
 - Report issues: use the GitHub issue tracker in this repository.
 
 ---

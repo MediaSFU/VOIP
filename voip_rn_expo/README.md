@@ -18,7 +18,6 @@
 - [Getting Started](#getting-started)
 - [Configuration](#configuration)
 - [MediaSFU Integration](#mediasfu-integration)
-- [Phone Validation](#phone-validation)
 - [Development Workflow](#development-workflow)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
@@ -55,14 +54,6 @@ Cross-platform VOIP application built with Expo SDK 52 and file-based routing. P
 - **Responsive Design**: Optimized for all screen sizes and orientations
 - **Native-like Performance**: Smooth animations and interactions
 
-### 🔧 Professional Phone Validation
-
-- **libphonenumber-js Integration**: Industry-standard phone number validation
-- **E.164 Format Support**: International phone number formatting
-- **AsYouType Formatter**: Real-time phone number formatting
-- **Cross-Platform Consistency**: Unified validation across all platforms
-- **Visual Feedback**: Real-time validation indicators
-
 ## 🛠️ Technology Stack
 
 ### Core Technologies
@@ -81,7 +72,6 @@ Cross-platform VOIP application built with Expo SDK 52 and file-based routing. P
     "expo": "~52.0.0",
     "react-native": "0.76.3",
     "@expo/router": "~4.0.0",
-    "libphonenumber-js": "^1.11.0",
     "@react-native-async-storage/async-storage": "~2.1.0",
     "react-native-webrtc": "^124.0.4"
   }
@@ -212,7 +202,7 @@ The app uses AsyncStorage for configuration persistence:
 Built on MediaSFU's robust communication infrastructure:
 
 - **🌐 MediaSFU Website**: [mediasfu.com](https://mediasfu.com)
-- **📞 Telephony Documentation**: [telephony.mediasfu.com](https://telephony.mediasfu.com)
+- **📞 Telephony Documentation**: [mediasfu.com/telephony](https://mediasfu.com/telephony)
 - **🤖 AI Agents Platform**: [agents.mediasfu.com](https://agents.mediasfu.com)
 
 ### API Integration Workflow
@@ -229,34 +219,6 @@ Built on MediaSFU's robust communication infrastructure:
 - **Participant Management**: Real-time participant join/leave notifications
 - **Call Quality Monitoring**: Network and audio quality indicators
 - **Event Synchronization**: Cross-platform event synchronization
-
-## 📞 Phone Validation
-
-### libphonenumber-js Integration
-
-Professional phone number validation using Google's libphonenumber:
-
-```typescript
-import { parsePhoneNumber, AsYouType } from 'libphonenumber-js';
-
-// Validate and format phone numbers
-const phoneNumber = parsePhoneNumber('+1234567890');
-if (phoneNumber?.isValid()) {
-  const e164 = phoneNumber.format('E.164'); // +1234567890
-  const international = phoneNumber.formatInternational(); // +1 234 567 890
-}
-
-// Real-time formatting
-const formatter = new AsYouType('US');
-formatter.input('2345678900'); // (234) 567-8900
-```
-
-### Validation Features
-
-- **E.164 Compliance**: International standard phone number format
-- **Regional Support**: Country-specific validation and formatting
-- **Real-time Feedback**: Visual validation indicators during input
-- **Cross-platform Consistency**: Unified validation across all platforms
 
 ## 🔧 Development Workflow
 
@@ -363,14 +325,13 @@ We welcome contributions to improve the VOIP Expo application!
 ### MediaSFU Documentation
 
 - **🌐 Main Website**: [mediasfu.com](https://mediasfu.com) - MediaSFU platform overview
-- **📞 Telephony Docs**: [telephony.mediasfu.com](https://telephony.mediasfu.com) - VOIP integration guides
+- **📞 Telephony Docs**: [mediasfu.com/telephony](https://mediasfu.com/telephony) - VOIP integration guides
 - **🤖 AI Agents**: [agents.mediasfu.com](https://agents.mediasfu.com) - AI-powered communication agents
 
 ### Development Resources
 
 - **📱 Expo Documentation**: [docs.expo.dev](https://docs.expo.dev)
 - **⚛️ React Native**: [reactnative.dev](https://reactnative.dev)
-- **📞 libphonenumber-js**: [github.com/catamphetamine/libphonenumber-js](https://github.com/catamphetamine/libphonenumber-js)
 
 ### Related Projects
 

@@ -16,14 +16,14 @@ Development has **not started yet**. This directory is a placeholder.
 
 ## 🎯 Goal
 
-Provide a desktop-focused wrapper and UX for the existing feature set already implemented in the React.js web client (calls, validation, media handling, session control) using Electron + Angular.
+Provide a desktop-focused wrapper and UX for the existing feature set already implemented in the React.js web client (calls, session control, and room management) using Electron + Angular.
 
 ## 🔄 Reference Implementation
 
 Use the React.js web version as the authoritative feature and flow reference:
 
 - React.js App: `../voip_reactjs/README.md`
-- Feature parity target: Core call flows, phone validation, session management, MediaSFU integration hooks.
+- Feature parity target: Core call flows, session management, MediaSFU integration hooks.
 
 ## 🗂️ Planned Minimal Milestones
 

@@ -29,7 +29,6 @@ Start testing instantly with the latest signed artifacts built from this project
 - [Project structure](#project-structure)
 - [Getting started](#getting-started)
 - [Configuration](#configuration)
-- [Phone validation](#phone-validation)
 - [MediaSFU flows](#mediasfu-flows)
 - [Permissions](#permissions)
 - [Build targets](#build-targets)
@@ -43,13 +42,13 @@ Start testing instantly with the latest signed artifacts built from this project
 - Managing MediaSFU API credentials through `VoipConfigProvider` (stored with `SharedPreferences`).
 - Polling MediaSFU call endpoints via `CallService` with back-off and caching.
 - Rendering active calls, room details, and history with timers for live durations.
-- Providing dialpad, validation messaging, and SIP configuration loading in one screen.
+- Providing dialpad and SIP configuration loading in one screen.
 
 State is coordinated through Provider (`VoipConfigProvider`, `CallManagerProvider`) and room rendering uses `MediasfuRoomDisplay`.
 
 ## Key features
 
-- **Dialer with validation** – Pre-populated “+” prefix, libphonenumber-backed validation, quick duration presets.
+- **Dialer** – Pre-populated “+” prefix and ergonomic input with duration presets.
 - **MediaSFU room monitor** – Displays the connected room, participant name, and microphone toggle state.
 - **Active call polling** – Polls active calls every few seconds, with configurable back-off when rate limited.
 - **Call history snapshots** – Maintains a limited list of past calls with status, timestamps, and duration fallback logic.
@@ -117,13 +116,6 @@ Configuration lives under **Settings → API Configuration** inside the app. Beh
 
 The first successful credential save triggers `loadSipConfig`, which requests SIP configs from MediaSFU (`/v1/sipconfigs/`). Errors (401/403/etc.) are surfaced in the UI.
 
-## Phone validation
-
-- Implemented using `dlibphonenumber` to match the web client’s behaviour.
-- `_isValidE164` normalizes numbers to `+` prefixed strings before validation.
-- `_formatPhoneNumberForDisplay` uses `PhoneNumberFormat.international` for readability.
-- Validation feedback appears below the dialer input and blocks call initiation until valid.
-
 ## MediaSFU flows
 
 1. `CallService.makeCall` posts to the MediaSFU call endpoint using stored credentials.
@@ -186,7 +178,7 @@ Before releasing, update icons via `flutter pub run flutter_launcher_icons:main`
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| “Authentication failed” toast | Invalid username or API key | Re-enter credentials, verify on <https://telephony.mediasfu.com> |
+| “Authentication failed” toast | Invalid username or API key | Re-enter credentials, verify on <https://mediasfu.com/telephony> |
 | SIP configs never load | Permissions missing on MediaSFU tenant | Confirm account has SIP provisioning rights |
 | Calls remain in dialing | MediaSFU tenant not enabled for outbound | Contact MediaSFU support |
 | Frequent polling errors | Network instability or rate limit | Allow the built-in back-off to reset, or increase interval |

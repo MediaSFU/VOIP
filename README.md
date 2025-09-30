@@ -17,12 +17,12 @@ This mono-repository contains MediaSFU reference clients for web, mobile, and de
 > - **Play-to-all versus caller-only audio** lets teams broadcast bot prompts or keep coaching private, adjustable mid-call.
 
 - MediaSFU platform: <https://mediasfu.com>
-- MediaSFU telephony: <https://telephony.mediasfu.com>
+- MediaSFU telephony: <https://mediasfu.com/telephony>
 - MediaSFU agents workspace: <https://agents.mediasfu.com>
 
 ## Prebuilt downloads
 
-Kick the tires instantly with signed artifacts from the latest release pipeline:
+Kick the tires instantly with samples built from this repository:
 
 - 🪟 **Windows desktop installer** (Flutter build): [MediaSFU-Setup.exe](https://mediasfu.com/apps/MediaSFU-Setup.exe)
 - 🤖 **Android (Flutter)**: [mediasfu-voip-flutter.apk](https://mediasfu.com/apps/mediasfu-voip-flutter.apk)
@@ -37,6 +37,7 @@ Kick the tires instantly with signed artifacts from the latest release pipeline:
 - [Repository structure](#repository-structure)
 - [Platform matrix](#platform-matrix)
 - [Core capabilities](#core-capabilities)
+- [Gallery](#gallery)
 - [Getting started](#getting-started)
 - [Development workflow](#development-workflow)
 - [Build and deployment](#build-and-deployment)
@@ -48,13 +49,13 @@ Kick the tires instantly with signed artifacts from the latest release pipeline:
 
 ## Overview
 
-The VOIP Multi-Platform Communication System provides a consistent MediaSFU-powered experience across multiple client technologies. Each application shares the same core concepts—dialing, room management, phone number validation, and participant control—while embracing the strengths of its respective framework.
+The VOIP Multi-Platform Communication System provides a consistent MediaSFU-powered experience across multiple client technologies. Each application shares the same core concepts—dialing, room management, and participant control—while embracing the strengths of its respective framework.
 
 Key objectives:
 
 - Deliver ready-to-run examples for MediaSFU product teams, integrators, and customer success engineers.
 - Showcase configurable dialer flows, outbound call orchestration, and MediaSFU room management.
-- Maintain uniform validation, logging, and analytics across platforms.
+- Maintain uniform logging and analytics across platforms.
 - Document a practical migration path between frameworks.
 
 ## System architecture
@@ -71,9 +72,6 @@ VOIP System Architecture
 │   ├── WebRTC transport
 │   ├── MediaSFU rooms and signaling
 │   └── Participant session management
-├── Validation utilities
-│   ├── libphonenumber-js (web/React Native/Expo)
-│   └── dlibphonenumber (Flutter)
 └── Deployment surfaces
     ├── Web hosting (Vercel, Netlify, or similar)
     ├── Apple App Store and Google Play
@@ -106,7 +104,7 @@ VOIP/
 
 Common capabilities implemented across the production-ready clients include:
 
-- **Dialer and validation** – E.164-compliant number formatting, validation, and normalization using MediaSFU dial plan rules.
+- **Dialer** – E.164-compliant number entry and normalization using MediaSFU dial plan rules.
 - **MediaSFU room lifecycle** – Creation, join, leave, and teardown flows with logging via the shared `CallService`/`callService` utilities.
 - **Call state management** – Hooks/providers (React) and ChangeNotifiers (Flutter) that keep the active call, queued calls, and call history in sync.
 - **Configurable UI** – Theme toggles, layout density options, and dashboard widgets tailored to each framework.
@@ -115,9 +113,15 @@ Common capabilities implemented across the production-ready clients include:
 Feature specifics:
 
 - **React.js** – Visual room dashboards, live call tiles, configuration modals, and history filters. Implementation details live in `voip_reactjs/src/components/Calls/CallsPage.tsx` and its associated hooks.
-- **Flutter** – Material/Cupertino hybrid UI with dialpad, validation hints, and MediaSFU session widgets. Primary logic resides in `lib/pages/calls_page.dart` alongside Provider-based state.
+- **Flutter** – Material/Cupertino hybrid UI with dialpad and MediaSFU session widgets. Primary logic resides in `lib/pages/calls_page.dart` alongside Provider-based state.
 - **React Native** – Shared TypeScript utilities, gesture-friendly controls, and integration with native permissions. Key files include `voip_rn/src/components/Calls/CallsPage.tsx` and `voip_rn/src/services/callService.ts`.
 - **Expo** – Tabbed navigation, OTA update support, and an installable web experience. See `voip_rn_expo/app/(tabs)` and `src/services` for implementation.
+
+## Gallery
+
+| ![Screenshot 1](./images/Pic1.png) | ![Screenshot 2](./images/Pic2.png) |
+|---|---|
+| ![Screenshot 3](./images/Pic3.png) | ![Screenshot 4](./images/Pic4.png) |
 
 ## Getting started
 
@@ -170,11 +174,10 @@ Each client surfaces:
 - **Room APIs** – Creation, join, update, and teardown via the MediaSFU REST endpoints.
 - **Participant controls** – Mute/unmute, video toggles, and room moderation.
 - **Telemetry** – Optional hooks for streaming call quality metrics to MediaSFU analytics.
-- **Validation helpers** – E.164 normalization using libphonenumber-js (`voip_reactjs`, `voip_rn`, `voip_rn_expo`) or dlibphonenumber (`voip_flutter`).
 
 For end-to-end service configuration, visit:
 
-- MediaSFU Telephony: <https://telephony.mediasfu.com>
+- MediaSFU Telephony: <https://mediasfu.com/telephony>
 - MediaSFU Agent Workspace (beta): <https://agents.mediasfu.com>
 
 ## Support and resources

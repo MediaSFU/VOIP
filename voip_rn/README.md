@@ -28,7 +28,6 @@ Grab the latest signed Android binary to explore the experience without a local 
 - [Project structure](#project-structure)
 - [Getting started](#getting-started)
 - [Configuration](#configuration)
-- [Phone validation](#phone-validation)
 - [MediaSFU lifecycle](#mediasfu-lifecycle)
 - [Permissions](#permissions)
 - [Build and release](#build-and-release)
@@ -110,12 +109,6 @@ Settings mirror the React client and are persisted using AsyncStorage.
 
 Clearing credentials resets stored SIP configuration and forces re-authentication.
 
-## Phone validation
-
-- Uses `libphonenumber-js` for parsing, validation, and formatting (`AsYouType`).
-- `isValidPhoneNumber` guards the call button; invalid numbers surface inline feedback.
-- Display formatting uses `parsePhoneNumber(...).formatInternational()` when valid.
-
 ## MediaSFU lifecycle
 
 1. `callService.makeCall` posts to MediaSFU with E.164 normalized numbers.
@@ -182,7 +175,7 @@ Ensure Hermes is enabled (default) and run `npm run lint && npx tsc --noEmit` be
 - **Metro cache issues** – `npx react-native start --reset-cache`.
 - **Android build fails** – `cd android && ./gradlew clean`, then rerun.
 - **Pods out of date** – `cd ios && pod repo update && pod install`.
-- **SIP configs empty** – Verify MediaSFU account permissions at <https://telephony.mediasfu.com>.
+- **SIP configs empty** – Verify MediaSFU account permissions at <https://mediasfu.com/telephony>.
 
 ## Contributing
 
